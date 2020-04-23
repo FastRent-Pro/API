@@ -16,6 +16,7 @@ class User extends Model {
         sequelize,
       }
     );
+
     this.addHook('beforeSave', async user => {
       if (user.password) {
         // eslint-disable-next-line no-param-reassign
