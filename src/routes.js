@@ -11,4 +11,6 @@ routes.get('/', (req, res) => {
 routes.post('/users', UserController.store);
 routes.post('/companies', CompanyController.store);
 routes.post('/cars', CarController.store);
+routes.post('/cars/plate', CarController.checkCarStatus);
+
 export default routes;
