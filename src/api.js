@@ -1,7 +1,7 @@
 class Api {
   search(plate) {
     if (plate.length !== 7) {
-      return 'plate lenght should be 7';
+      throw new Error('plate length should be 7');
     }
     if (plate[0] === 'F') {
       return {
@@ -58,7 +58,7 @@ class Api {
       };
       return status;
     }
-    return 'plate not found';
+    throw new Error('Invalid car plate');
   }
 }
 

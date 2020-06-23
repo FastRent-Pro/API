@@ -18,6 +18,14 @@ class UserController {
     const user = await User.create(req.body);
     return res.json(user);
   }
+
+  async check(req, res) {
+    const UserExist = await User.findOne({ where: { email: req.body.email } });
+    if (UserExist) {
+      return res.json(true);
+    }
+    return false;
+  }
 }
 
 export default new UserController();
